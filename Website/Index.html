@@ -1,0 +1,33 @@
+    <style type="text/css">
+        body {
+            background-color: rgb(162, 168, 170);
+        }
+        .title {
+            padding: 15px 32px;
+            border: 2px solid #857f7f;
+            border-radius: 15px;
+        }
+        .btn {
+            background-color: rgb(21, 34, 36);
+            border: 1px solid #000000;
+            color: white;
+            padding: 20px 100px;
+            border-radius: 8px;
+            width: 100%;
+        }
+        .btn:hover {
+            background-color: hsl(315, 42%, 30%);
+        }
+    </style>
+    <h1 class="title" align="center">WiFi SMS Panel</h1>
+    <div>
+        <form action="/contact">
+            <button class="btn" id=contact type="submit" onclick="contact()">Goto Contact Page</button>
+        </form>
+        <form action="/sms">
+            <button class="btn" id=sms type="submit" onclick="sms()">Goto SMS Page</button>
+        </form>
+        <form action="/call">
+            <button class="btn" id=sms type="submit" onclick="sms()">Goto Call Page</button>
+        </form>
+    </div>

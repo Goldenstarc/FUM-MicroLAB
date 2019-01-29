@@ -1,0 +1,57 @@
+    <style type="text/css">
+        body {
+            background-color: rgb(162, 168, 170);
+        }
+
+        .title {
+            padding: 5px;
+            border: 2px solid #857f7f;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+        }
+        .text {
+            background-color: rgb(21, 34, 36);
+            border: 1px solid #000000;
+            color: white;
+            padding: 70px 100px;
+            border-radius: 8px;
+
+        }
+        .style {
+            background-color: rgb(21, 34, 36);
+            border: 1px solid #000000;
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            padding: 10px 70px;
+        }
+        .text:hover,
+        .style:hover {
+            background-color: hsl(315, 42%, 30%);
+        }
+
+    </style>
+    <h1 class="title" align="center">Send Text Message</h1>
+    <form name="myform" method="GET">
+        
+        <div align="center">
+            <br><br>
+            <label>Contact</label>
+            <input class="style" type="text" name="name" size="25">
+            <br><br>
+            <label>Text Mg</label>
+            <input class="text" type="text" name="text" size="25">
+            <br><br>
+            <button class="style" type="submit">Send</button>
+        </div>
+    </form>
+    </form>
+    <form action="/index">
+        <div align="center">
+            <button class="style" type="submit">Return to Main Page</button>
+    </form>
+    <br><br>
+
+    <form action="/contact">
+            <button class="style" type="submit">Go to Contact Page</button>
+    </form>

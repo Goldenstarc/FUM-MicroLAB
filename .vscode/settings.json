@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.cshtml": "razor",
+        "eeprom.h": "c",
+        "string.h": "c"
+    }
+}

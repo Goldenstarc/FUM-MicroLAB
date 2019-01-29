@@ -1,0 +1,66 @@
+<style type="text/css">
+    body {
+        background-color: rgb(162, 168, 170);
+    }
+
+    .title {
+        padding: 5px;
+        border: 2px solid #857f7f;
+        border-radius: 5px;
+    }
+
+    .style {
+        background-color: rgb(21, 34, 36);
+        border: 1px solid #000000;
+        color: white;
+        text-align: center;
+        border-radius: 8px;
+        padding: 10px 70px;
+    }
+
+    .style2 {
+        background-color: rgb(21, 34, 36);
+        border: 1px solid #000000;
+        color: white;
+        text-align: center;
+        border-radius: 8px;
+        padding: 10px 80px;
+    }
+
+    .style2:hover,
+    .style:hover {
+        background-color: hsl(315, 42%, 30%);
+    }
+</style>
+
+<h1 class="title" align="center">Add Contact</h1>
+    <div align="center">
+
+<form name="myform" method="GET">
+        <br>
+        <label>Name</label>
+        <input class="style" type="text" name="name" >
+        <label>Number</label>
+        <input class="style" type="text" name="number">
+        <br><br>
+        <button class="style" type="submit">Save Contact</button>
+    </div>
+</form>
+<div align="center">
+
+<form action="/erase">
+        <button class="style" type="submit">Mass Erase</button>
+</form>
+<br><br>
+<form action="/index">
+    <div align="center">
+        <button class="style" type="submit">Return to Main Page</button>
+</form>
+<br><br>
+
+<form action="/sms">
+    <button class="style2" type="submit">Go to SMS Page</button>
+</form>
+<form action="/call">
+    <button class="style2" type="submit">Go to Call Page</button>
+</form>
