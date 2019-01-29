@@ -1,11 +1,11 @@
 # FUM-MicroLAB
 FUM MicroLAB Final project - STM,  SIM800 and ESP
 
-# How-to
+# How to
 compile and run , its written for STM32F407 Discovery board,
 you can use your board.
 
-# Description :
+# Description
 Call and SMS panel for SIM800 series using ESP (at command)
 with contact support
 
