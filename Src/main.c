@@ -10,7 +10,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "cmsis_os.h"
-
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "eeprom.h"
@@ -42,7 +41,7 @@ UART_HandleTypeDef huart6;
 osThreadId defaultTaskHandle;
 /* USER CODE BEGIN PV */
 
-#define Wifi_Init 0
+#define Wifi_Init 1
 
 #define IndexPageCharCount 731
 unsigned char IndexPage[IndexPageCharCount] =
@@ -496,8 +495,8 @@ int EEPROM_GetNumber()
 void ESP_Init(int FullInit)
 {
 
-  // HAL_UART_Transmit(&huart3, "AT\r\n", sizeof("AT\r\n"), 1000);
-  // HAL_Delay(1000);
+   HAL_UART_Transmit(&huart3, "AT\r\n", sizeof("AT\r\n"), 1000);
+   HAL_Delay(1000);
 
   if (FullInit != 0)
   {
@@ -523,7 +522,7 @@ void ESP_Init(int FullInit)
     HAL_Delay(10000);
   }
 
-  HAL_UART_Transmit(&huart3, "AT+CIPSTA=\"192.168.21.120\",\"192.168.21.1\",\"255.255.255.0\"\r\n", 59, 1000);
+  //HAL_UART_Transmit(&huart3, "AT+CIPSTA=\"192.168.21.120\",\"192.168.21.1\",\"255.255.255.0\"\r\n", 59, 1000);
   //HAL_UART_Transmit(&huart3, "AT+CIPSTA=\"192.168.1.120\",\"192.168.1.1\",\"255.255.255.0\"\r\n", 58, 1000);
   HAL_Delay(1000);
 
@@ -1021,17 +1020,23 @@ int main(void)
   /* USER CODE BEGIN 2 */
   //========================================= Init ========================================= //
   HAL_UART_Transmit(&huart6, "\r\n========Debug=======\r\n", 24, 1000);
+
   HAL_UART_Transmit(&huart6, "EEPROM Init", 11, 1000);
   EEPROM_Init();
+
+  HAL_GPIO_WritePin(GPIOD, LD3_Pin | LD4_Pin | LD5_Pin | LD6_Pin, GPIO_PIN_SET);
   HAL_UART_Transmit(&huart6, ": OK\r\nSimCom Init", 17, 1000);
   SIMCOM_Init();
+  HAL_GPIO_WritePin(GPIOD, LD3_Pin | LD4_Pin | LD5_Pin | LD6_Pin, GPIO_PIN_RESET);
+  HAL_Delay(800);
+
+  HAL_GPIO_WritePin(GPIOD, LD3_Pin | LD4_Pin | LD5_Pin | LD6_Pin, GPIO_PIN_SET);
   HAL_UART_Transmit(&huart6, ": OK\r\nESPMOD Init", 17, 1000);
   ESP_Init(Wifi_Init);
   HAL_UART_Transmit(&huart6, ": OK\r\n====================\r\n", 28, 1000);
-  EEPROM_ListContacts();
-  HAL_GPIO_WritePin(GPIOD, LD3_Pin | LD4_Pin | LD5_Pin | LD6_Pin, GPIO_PIN_SET);
-  HAL_Delay(800);
   HAL_GPIO_WritePin(GPIOD, LD3_Pin | LD4_Pin | LD5_Pin | LD6_Pin, GPIO_PIN_RESET);
+
+  EEPROM_ListContacts();
   HAL_UART_Transmit(&huart6, "========Ready=======\r\n", 22, 1000);
   //========================================= Init ========================================= //
   /* USER CODE END 2 */
@@ -1069,7 +1074,7 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
-  {ƒ
+  {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

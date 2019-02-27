@@ -2,6 +2,10 @@
     "files.associations": {
         "*.cshtml": "razor",
         "eeprom.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "cmsis_os.h": "c",
+        "main.h": "c",
+        "stm32f4xx_hal.h": "c",
+        "stm32f4xx_hal_conf.h": "c"
     }
 }
