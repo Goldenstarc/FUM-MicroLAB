@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccjzse9D.s 			page 1
+ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccPPiaaI.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -17,20 +17,190 @@ ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccjzse9D.s 			page 1
   14              		.text
   15              	.Ltext0:
   16              		.cfi_sections	.debug_frame
-  17              	.Letext0:
-  18              		.file 1 "/usr/local/Cellar/arm-gcc-bin/8-2018-q4-major/arm-none-eabi/include/machine/_default_type
-  19              		.file 2 "/usr/local/Cellar/arm-gcc-bin/8-2018-q4-major/arm-none-eabi/include/sys/_stdint.h"
-  20              		.file 3 "Inc/FreeRTOSConfig.h"
-  21              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
-  22              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
-  23              		.file 6 "/usr/local/Cellar/arm-gcc-bin/8-2018-q4-major/arm-none-eabi/include/sys/lock.h"
-  24              		.file 7 "/usr/local/Cellar/arm-gcc-bin/8-2018-q4-major/arm-none-eabi/include/sys/_types.h"
-  25              		.file 8 "/usr/local/Cellar/arm-gcc-bin/8-2018-q4-major/lib/gcc/arm-none-eabi/8.2.1/include/stddef.
-  26              		.file 9 "/usr/local/Cellar/arm-gcc-bin/8-2018-q4-major/arm-none-eabi/include/sys/reent.h"
-ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccjzse9D.s 			page 2
+  17              		.section	.text.vApplicationGetIdleTaskMemory,"ax",%progbits
+  18              		.align	1
+  19              		.global	vApplicationGetIdleTaskMemory
+  20              		.arch armv7e-m
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  24              		.fpu fpv4-sp-d16
+  26              	vApplicationGetIdleTaskMemory:
+  27              	.LVL0:
+  28              	.LFB135:
+  29              		.file 1 "Src/freertos.c"
+   1:Src/freertos.c **** /* USER CODE BEGIN Header */
+   2:Src/freertos.c **** /**
+   3:Src/freertos.c ****   ******************************************************************************
+   4:Src/freertos.c ****   * File Name          : freertos.c
+   5:Src/freertos.c ****   * Description        : Code for freertos applications
+   6:Src/freertos.c ****   ******************************************************************************
+   7:Src/freertos.c ****   * This notice applies to any and all portions of this file
+   8:Src/freertos.c ****   * that are not between comment pairs USER CODE BEGIN and
+   9:Src/freertos.c ****   * USER CODE END. Other portions of this file, whether 
+  10:Src/freertos.c ****   * inserted by the user or by software development tools
+  11:Src/freertos.c ****   * are owned by their respective copyright owners.
+  12:Src/freertos.c ****   *
+  13:Src/freertos.c ****   * Copyright (c) 2019 STMicroelectronics International N.V. 
+  14:Src/freertos.c ****   * All rights reserved.
+  15:Src/freertos.c ****   *
+  16:Src/freertos.c ****   * Redistribution and use in source and binary forms, with or without 
+  17:Src/freertos.c ****   * modification, are permitted, provided that the following conditions are met:
+  18:Src/freertos.c ****   *
+  19:Src/freertos.c ****   * 1. Redistribution of source code must retain the above copyright notice, 
+  20:Src/freertos.c ****   *    this list of conditions and the following disclaimer.
+  21:Src/freertos.c ****   * 2. Redistributions in binary form must reproduce the above copyright notice,
+  22:Src/freertos.c ****   *    this list of conditions and the following disclaimer in the documentation
+  23:Src/freertos.c ****   *    and/or other materials provided with the distribution.
+  24:Src/freertos.c ****   * 3. Neither the name of STMicroelectronics nor the names of other 
+  25:Src/freertos.c ****   *    contributors to this software may be used to endorse or promote products 
+  26:Src/freertos.c ****   *    derived from this software without specific written permission.
+  27:Src/freertos.c ****   * 4. This software, including modifications and/or derivative works of this 
+  28:Src/freertos.c ****   *    software, must execute solely and exclusively on microcontroller or
+  29:Src/freertos.c ****   *    microprocessor devices manufactured by or for STMicroelectronics.
+ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccPPiaaI.s 			page 2
+
+
+  30:Src/freertos.c ****   * 5. Redistribution and use of this software other than as permitted under 
+  31:Src/freertos.c ****   *    this license is void and will automatically terminate your rights under 
+  32:Src/freertos.c ****   *    this license. 
+  33:Src/freertos.c ****   *
+  34:Src/freertos.c ****   * THIS SOFTWARE IS PROVIDED BY STMICROELECTRONICS AND CONTRIBUTORS "AS IS" 
+  35:Src/freertos.c ****   * AND ANY EXPRESS, IMPLIED OR STATUTORY WARRANTIES, INCLUDING, BUT NOT 
+  36:Src/freertos.c ****   * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+  37:Src/freertos.c ****   * PARTICULAR PURPOSE AND NON-INFRINGEMENT OF THIRD PARTY INTELLECTUAL PROPERTY
+  38:Src/freertos.c ****   * RIGHTS ARE DISCLAIMED TO THE FULLEST EXTENT PERMITTED BY LAW. IN NO EVENT 
+  39:Src/freertos.c ****   * SHALL STMICROELECTRONICS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+  40:Src/freertos.c ****   * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  41:Src/freertos.c ****   * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, 
+  42:Src/freertos.c ****   * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
+  43:Src/freertos.c ****   * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING 
+  44:Src/freertos.c ****   * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+  45:Src/freertos.c ****   * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  46:Src/freertos.c ****   *
+  47:Src/freertos.c ****   ******************************************************************************
+  48:Src/freertos.c ****   */
+  49:Src/freertos.c **** /* USER CODE END Header */
+  50:Src/freertos.c **** 
+  51:Src/freertos.c **** /* Includes ------------------------------------------------------------------*/
+  52:Src/freertos.c **** #include "FreeRTOS.h"
+  53:Src/freertos.c **** #include "task.h"
+  54:Src/freertos.c **** #include "main.h"
+  55:Src/freertos.c **** 
+  56:Src/freertos.c **** /* Private includes ----------------------------------------------------------*/
+  57:Src/freertos.c **** /* USER CODE BEGIN Includes */     
+  58:Src/freertos.c **** 
+  59:Src/freertos.c **** /* USER CODE END Includes */
+  60:Src/freertos.c **** 
+  61:Src/freertos.c **** /* Private typedef -----------------------------------------------------------*/
+  62:Src/freertos.c **** /* USER CODE BEGIN PTD */
+  63:Src/freertos.c **** 
+  64:Src/freertos.c **** /* USER CODE END PTD */
+  65:Src/freertos.c **** 
+  66:Src/freertos.c **** /* Private define ------------------------------------------------------------*/
+  67:Src/freertos.c **** /* USER CODE BEGIN PD */
+  68:Src/freertos.c **** 
+  69:Src/freertos.c **** /* USER CODE END PD */
+  70:Src/freertos.c **** 
+  71:Src/freertos.c **** /* Private macro -------------------------------------------------------------*/
+  72:Src/freertos.c **** /* USER CODE BEGIN PM */
+  73:Src/freertos.c **** 
+  74:Src/freertos.c **** /* USER CODE END PM */
+  75:Src/freertos.c **** 
+  76:Src/freertos.c **** /* Private variables ---------------------------------------------------------*/
+  77:Src/freertos.c **** /* USER CODE BEGIN Variables */
+  78:Src/freertos.c **** 
+  79:Src/freertos.c **** /* USER CODE END Variables */
+  80:Src/freertos.c **** 
+  81:Src/freertos.c **** /* Private function prototypes -----------------------------------------------*/
+  82:Src/freertos.c **** /* USER CODE BEGIN FunctionPrototypes */
+  83:Src/freertos.c ****    
+  84:Src/freertos.c **** /* USER CODE END FunctionPrototypes */
+  85:Src/freertos.c **** 
+  86:Src/freertos.c **** /* GetIdleTaskMemory prototype (linked to static allocation support) */
+ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccPPiaaI.s 			page 3
+
+
+  87:Src/freertos.c **** void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskS
+  88:Src/freertos.c **** 
+  89:Src/freertos.c **** /* USER CODE BEGIN GET_IDLE_TASK_MEMORY */
+  90:Src/freertos.c **** static StaticTask_t xIdleTaskTCBBuffer;
+  91:Src/freertos.c **** static StackType_t xIdleStack[configMINIMAL_STACK_SIZE];
+  92:Src/freertos.c ****   
+  93:Src/freertos.c **** void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskS
+  94:Src/freertos.c **** {
+  30              		.loc 1 94 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+  95:Src/freertos.c ****   *ppxIdleTaskTCBBuffer = &xIdleTaskTCBBuffer;
+  35              		.loc 1 95 3 view .LVU1
+  36              		.loc 1 95 25 is_stmt 0 view .LVU2
+  37 0000 034B     		ldr	r3, .L2
+  38 0002 0360     		str	r3, [r0]
+  96:Src/freertos.c ****   *ppxIdleTaskStackBuffer = &xIdleStack[0];
+  39              		.loc 1 96 3 is_stmt 1 view .LVU3
+  40              		.loc 1 96 27 is_stmt 0 view .LVU4
+  41 0004 034B     		ldr	r3, .L2+4
+  42 0006 0B60     		str	r3, [r1]
+  97:Src/freertos.c ****   *pulIdleTaskStackSize = configMINIMAL_STACK_SIZE;
+  43              		.loc 1 97 3 is_stmt 1 view .LVU5
+  44              		.loc 1 97 25 is_stmt 0 view .LVU6
+  45 0008 8023     		movs	r3, #128
+  46 000a 1360     		str	r3, [r2]
+  98:Src/freertos.c ****   /* place for user code */
+  99:Src/freertos.c **** }                   
+  47              		.loc 1 99 1 view .LVU7
+  48 000c 7047     		bx	lr
+  49              	.L3:
+  50 000e 00BF     		.align	2
+  51              	.L2:
+  52 0010 00000000 		.word	.LANCHOR0
+  53 0014 00000000 		.word	.LANCHOR1
+  54              		.cfi_endproc
+  55              	.LFE135:
+  57              		.section	.bss.xIdleStack,"aw",%nobits
+  58              		.align	2
+  59              		.set	.LANCHOR1,. + 0
+  62              	xIdleStack:
+  63 0000 00000000 		.space	512
+  63      00000000 
+  63      00000000 
+  63      00000000 
+  63      00000000 
+  64              		.section	.bss.xIdleTaskTCBBuffer,"aw",%nobits
+  65              		.align	2
+  66              		.set	.LANCHOR0,. + 0
+  69              	xIdleTaskTCBBuffer:
+  70 0000 00000000 		.space	84
+  70      00000000 
+  70      00000000 
+  70      00000000 
+  70      00000000 
+ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccPPiaaI.s 			page 4
+
+
+  71              		.text
+  72              	.Letext0:
+  73              		.file 2 "/usr/local/Cellar/arm-gcc-bin/8-2018-q4-major/arm-none-eabi/include/machine/_default_type
+  74              		.file 3 "/usr/local/Cellar/arm-gcc-bin/8-2018-q4-major/arm-none-eabi/include/sys/_stdint.h"
+  75              		.file 4 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
+  76              		.file 5 "Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h"
+  77              		.file 6 "Inc/FreeRTOSConfig.h"
+  78              		.file 7 "Drivers/CMSIS/Include/core_cm4.h"
+  79              		.file 8 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccPPiaaI.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 freertos.c
+/var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccPPiaaI.s:18     .text.vApplicationGetIdleTaskMemory:0000000000000000 $t
+/var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccPPiaaI.s:26     .text.vApplicationGetIdleTaskMemory:0000000000000000 vApplicationGetIdleTaskMemory
+/var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccPPiaaI.s:52     .text.vApplicationGetIdleTaskMemory:0000000000000010 $d
+/var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccPPiaaI.s:58     .bss.xIdleStack:0000000000000000 $d
+/var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccPPiaaI.s:62     .bss.xIdleStack:0000000000000000 xIdleStack
+/var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccPPiaaI.s:65     .bss.xIdleTaskTCBBuffer:0000000000000000 $d
+/var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccPPiaaI.s:69     .bss.xIdleTaskTCBBuffer:0000000000000000 xIdleTaskTCBBuffer
 
 NO UNDEFINED SYMBOLS

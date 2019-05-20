@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//cch9ZN48.s 			page 1
+ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccUHoieB.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -27,7 +27,7 @@ ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//cch9ZN48.s 			page 1
   24              		.fpu fpv4-sp-d16
   26              	HAL_InitTick:
   27              	.LVL0:
-  28              	.LFB126:
+  28              	.LFB130:
   29              		.file 1 "Src/stm32f4xx_hal_timebase_tim.c"
    1:Src/stm32f4xx_hal_timebase_tim.c **** /* USER CODE BEGIN Header */
    2:Src/stm32f4xx_hal_timebase_tim.c **** /**
@@ -58,7 +58,7 @@ ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//cch9ZN48.s 			page 1
   27:Src/stm32f4xx_hal_timebase_tim.c ****   * 4. This software, including modifications and/or derivative works of this 
   28:Src/stm32f4xx_hal_timebase_tim.c ****   *    software, must execute solely and exclusively on microcontroller or
   29:Src/stm32f4xx_hal_timebase_tim.c ****   *    microprocessor devices manufactured by or for STMicroelectronics.
-ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//cch9ZN48.s 			page 2
+ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccUHoieB.s 			page 2
 
 
   30:Src/stm32f4xx_hal_timebase_tim.c ****   * 5. Redistribution and use of this software other than as permitted under 
@@ -118,7 +118,7 @@ ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//cch9ZN48.s 			page 1
   40 0002 88B0     		sub	sp, sp, #32
   41              	.LCFI1:
   42              		.cfi_def_cfa_offset 40
-ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//cch9ZN48.s 			page 3
+ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccUHoieB.s 			page 3
 
 
   74:Src/stm32f4xx_hal_timebase_tim.c ****   RCC_ClkInitTypeDef    clkconfig;
@@ -178,7 +178,7 @@ ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//cch9ZN48.s 			page 1
   81              	.LVL5:
   90:Src/stm32f4xx_hal_timebase_tim.c ****   
   91:Src/stm32f4xx_hal_timebase_tim.c ****   /* Compute TIM14 clock */
-ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//cch9ZN48.s 			page 4
+ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccUHoieB.s 			page 4
 
 
   92:Src/stm32f4xx_hal_timebase_tim.c ****   uwTimclock = 2*HAL_RCC_GetPCLK1Freq();
@@ -238,7 +238,7 @@ ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//cch9ZN48.s 			page 1
  117              		.loc 1 110 3 is_stmt 1 view .LVU32
  118              		.loc 1 110 6 is_stmt 0 view .LVU33
  119 0056 FFF7FEFF 		bl	HAL_TIM_Base_Init
-ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//cch9ZN48.s 			page 5
+ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccUHoieB.s 			page 5
 
 
  120              	.LVL10:
@@ -281,7 +281,7 @@ ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//cch9ZN48.s 			page 1
  147 0074 00000000 		.word	htim14
  148 0078 00200040 		.word	1073750016
  149              		.cfi_endproc
- 150              	.LFE126:
+ 150              	.LFE130:
  152              		.section	.text.HAL_SuspendTick,"ax",%progbits
  153              		.align	1
  154              		.global	HAL_SuspendTick
@@ -290,7 +290,7 @@ ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//cch9ZN48.s 			page 1
  157              		.thumb_func
  158              		.fpu fpv4-sp-d16
  160              	HAL_SuspendTick:
- 161              	.LFB127:
+ 161              	.LFB131:
  119:Src/stm32f4xx_hal_timebase_tim.c **** 
  120:Src/stm32f4xx_hal_timebase_tim.c **** /**
  121:Src/stm32f4xx_hal_timebase_tim.c ****   * @brief  Suspend Tick increment.
@@ -298,7 +298,7 @@ ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//cch9ZN48.s 			page 1
  123:Src/stm32f4xx_hal_timebase_tim.c ****   * @param  None
  124:Src/stm32f4xx_hal_timebase_tim.c ****   * @retval None
  125:Src/stm32f4xx_hal_timebase_tim.c ****   */
-ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//cch9ZN48.s 			page 6
+ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccUHoieB.s 			page 6
 
 
  126:Src/stm32f4xx_hal_timebase_tim.c **** void HAL_SuspendTick(void)
@@ -324,7 +324,7 @@ ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//cch9ZN48.s 			page 1
  177              	.L9:
  178 0010 00000000 		.word	htim14
  179              		.cfi_endproc
- 180              	.LFE127:
+ 180              	.LFE131:
  182              		.section	.text.HAL_ResumeTick,"ax",%progbits
  183              		.align	1
  184              		.global	HAL_ResumeTick
@@ -333,7 +333,7 @@ ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//cch9ZN48.s 			page 1
  187              		.thumb_func
  188              		.fpu fpv4-sp-d16
  190              	HAL_ResumeTick:
- 191              	.LFB128:
+ 191              	.LFB132:
  131:Src/stm32f4xx_hal_timebase_tim.c **** 
  132:Src/stm32f4xx_hal_timebase_tim.c **** /**
  133:Src/stm32f4xx_hal_timebase_tim.c ****   * @brief  Resume Tick increment.
@@ -358,7 +358,7 @@ ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//cch9ZN48.s 			page 1
  202 000a D360     		str	r3, [r2, #12]
  142:Src/stm32f4xx_hal_timebase_tim.c **** }
  203              		.loc 1 142 1 is_stmt 0 view .LVU44
-ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//cch9ZN48.s 			page 7
+ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccUHoieB.s 			page 7
 
 
  204 000c 7047     		bx	lr
@@ -367,8 +367,8 @@ ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//cch9ZN48.s 			page 1
  207              	.L12:
  208 0010 00000000 		.word	htim14
  209              		.cfi_endproc
- 210              	.LFE128:
- 212              		.comm	htim14,60,4
+ 210              	.LFE132:
+ 212              		.comm	htim14,64,4
  213              		.text
  214              	.Letext0:
  215              		.file 2 "/usr/local/Cellar/arm-gcc-bin/8-2018-q4-major/arm-none-eabi/include/machine/_default_type
@@ -376,30 +376,26 @@ ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//cch9ZN48.s 			page 1
  217              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
  218              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
  219              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
- 220              		.file 7 "/usr/local/Cellar/arm-gcc-bin/8-2018-q4-major/arm-none-eabi/include/sys/lock.h"
- 221              		.file 8 "/usr/local/Cellar/arm-gcc-bin/8-2018-q4-major/arm-none-eabi/include/sys/_types.h"
- 222              		.file 9 "/usr/local/Cellar/arm-gcc-bin/8-2018-q4-major/lib/gcc/arm-none-eabi/8.2.1/include/stddef.
- 223              		.file 10 "/usr/local/Cellar/arm-gcc-bin/8-2018-q4-major/arm-none-eabi/include/sys/reent.h"
- 224              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 225              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h"
- 226              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 227              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
- 228              		.file 15 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
-ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//cch9ZN48.s 			page 8
+ 220              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 221              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h"
+ 222              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 223              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
+ 224              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
+ARM GAS  /var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccUHoieB.s 			page 8
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f4xx_hal_timebase_tim.c
-/var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//cch9ZN48.s:18     .text.HAL_InitTick:0000000000000000 $t
-/var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//cch9ZN48.s:26     .text.HAL_InitTick:0000000000000000 HAL_InitTick
-/var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//cch9ZN48.s:145    .text.HAL_InitTick:000000000000006c $d
-                            *COM*:000000000000003c htim14
-/var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//cch9ZN48.s:153    .text.HAL_SuspendTick:0000000000000000 $t
-/var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//cch9ZN48.s:160    .text.HAL_SuspendTick:0000000000000000 HAL_SuspendTick
-/var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//cch9ZN48.s:178    .text.HAL_SuspendTick:0000000000000010 $d
-/var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//cch9ZN48.s:183    .text.HAL_ResumeTick:0000000000000000 $t
-/var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//cch9ZN48.s:190    .text.HAL_ResumeTick:0000000000000000 HAL_ResumeTick
-/var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//cch9ZN48.s:208    .text.HAL_ResumeTick:0000000000000010 $d
+/var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccUHoieB.s:18     .text.HAL_InitTick:0000000000000000 $t
+/var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccUHoieB.s:26     .text.HAL_InitTick:0000000000000000 HAL_InitTick
+/var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccUHoieB.s:145    .text.HAL_InitTick:000000000000006c $d
+                            *COM*:0000000000000040 htim14
+/var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccUHoieB.s:153    .text.HAL_SuspendTick:0000000000000000 $t
+/var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccUHoieB.s:160    .text.HAL_SuspendTick:0000000000000000 HAL_SuspendTick
+/var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccUHoieB.s:178    .text.HAL_SuspendTick:0000000000000010 $d
+/var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccUHoieB.s:183    .text.HAL_ResumeTick:0000000000000000 $t
+/var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccUHoieB.s:190    .text.HAL_ResumeTick:0000000000000000 HAL_ResumeTick
+/var/folders/y1/yp9xw0cj42x3k9rxz_j1k75w0000gn/T//ccUHoieB.s:208    .text.HAL_ResumeTick:0000000000000010 $d
 
 UNDEFINED SYMBOLS
 HAL_NVIC_SetPriority
